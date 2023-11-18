@@ -17,7 +17,7 @@ from langchain.chains.openai_functions import (
 )
 
 os.environ["LANGCHAIN_API_KEY"] = ""
-os.environ["LANGCHAIN_SESSION"] = "jacob-test"
+os.environ["LANGCHAIN_SESSION"] = ""
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 
 os.environ["ANTHROPIC_API_KEY"] = ""
@@ -55,7 +55,8 @@ llm_kwargs = {
     "function_call": {"name": openai_functions[0]["name"]}
 }
 
-llm = OllamaFunctions(temperature=0, model="zephyr")
+# Ollama JSON mode has a bug where it infintely generates newlines. This stop sequence hack fixes it
+llm = OllamaFunctions(temperature=0, model="llama2", timeout=300, stop=["\n\n\n\n"])
 # llm = ChatOpenAI(temperature=0, model="gpt-4-1106-preview")
 # llm = AnthropicFunctions(temperature=0, model="claude-2")
 
@@ -91,6 +92,6 @@ run_on_dataset(
     llm_or_chain_factory=extraction_chain,
     client=client,
     evaluation=evaluation_config,
-    project_name="zephyr-test",
+    project_name="llama2-test",
     concurrency_level=1,
 )

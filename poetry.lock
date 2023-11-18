@@ -731,8 +731,8 @@ text-helpers = ["chardet (>=5.1.0,<6.0.0)"]
 [package.source]
 type = "git"
 url = "https://github.com/langchain-ai/langchain.git"
-reference = "d84bb3899369d57f5c8dd081edc87ff75ecd79e1"
-resolved_reference = "d84bb3899369d57f5c8dd081edc87ff75ecd79e1"
+reference = "d485d07d3171173c7540df1dc2499e7569a2af40"
+resolved_reference = "d485d07d3171173c7540df1dc2499e7569a2af40"
 subdirectory = "libs/langchain"
 
 [[package]]
@@ -753,8 +753,8 @@ extended-testing = ["faker (>=19.3.1,<20.0.0)", "presidio-analyzer (>=2.2.33,<3.
 [package.source]
 type = "git"
 url = "https://github.com/langchain-ai/langchain.git"
-reference = "d84bb3899369d57f5c8dd081edc87ff75ecd79e1"
-resolved_reference = "d84bb3899369d57f5c8dd081edc87ff75ecd79e1"
+reference = "d485d07d3171173c7540df1dc2499e7569a2af40"
+resolved_reference = "d485d07d3171173c7540df1dc2499e7569a2af40"
 subdirectory = "libs/experimental"
 
 [[package]]
@@ -1701,4 +1701,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "5eb6bd85e5b590eb401aba1bdef89224ecb513b60e0c450626f1bfe575d51c36"
+content-hash = "2de71e28a2477632bf766076eb19042de4dde1326295f0d3b69d010fcc2f6ea8"
