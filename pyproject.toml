@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "spam-email-extraction-eval"
+version = "0.1.0"
+description = ""
+authors = ["jacoblee93 <jacoblee93@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+html2text = "^2020.1.16"
+langchain = { git = "https://github.com/langchain-ai/langchain.git", subdirectory = "libs/langchain", rev = "d84bb3899369d57f5c8dd081edc87ff75ecd79e1" }
+langchain-experimental = { git = "https://github.com/langchain-ai/langchain.git", subdirectory = "libs/experimental", rev = "d84bb3899369d57f5c8dd081edc87ff75ecd79e1" }
+langsmith = "^0.0.65"
+openai = "^1.3.3"
+tiktoken = "^0.5.1"
+anthropic = "^0.7.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
