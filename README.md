@@ -23,6 +23,8 @@ performed almost on par with GPT-3.5-turbo despite not having a native functions
 
 You can see the [results here](https://smith.langchain.com/public/36bdfe7d-3cd1-4b36-b957-d12d95810a2b/d).
 
+More powerful and specialized OSS models would likely exceed some of these results.
+
 Note that invalid/unparseable outputs are currently omitted in the final LangSmith tally rather than e.g. scored as 0, 
 but with the exception of base Llama 2, which had many output errors, there were only a few cases for the non-functions models.
 So on average displayed results should be close to the true values.
