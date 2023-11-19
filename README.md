@@ -85,6 +85,11 @@ wrapper around Anthropic's Claude family of models and
 [OllamaFunctions](https://api.python.langchain.com/en/latest/llms/langchain_experimental.llms.ollama_functions.OllamaFunctions.html) for open source models 
 running locally. These wrappers are designed to present the same functions interface.
 
+If you want to evaluate Anthropic, you will need to retrieve your [Anthropic API key](https://console.anthropic.com/).
+
+If you want to evaluate OSS models through Ollama, you will need to set up and install the [Ollama desktop app](https://ollama.ai/) and then pull a model.
+Note that you will need version 0.1.9 or later for JSON mode support
+
 You can also swap in other models or prompts if you'd like to test those.
 
 The script will use `run_on_datset` to automatically run a chain against the entire dataset input, then run a custom evaluator powered by GPT-4 
