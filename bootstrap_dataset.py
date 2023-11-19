@@ -12,12 +12,6 @@ from langchain.chains.openai_functions import (
     get_openai_output_parser,
 )
 
-os.environ["LANGCHAIN_API_KEY"] = ""
-os.environ["LANGCHAIN_SESSION"] = "extraction-dataset-gathering"
-os.environ["LANGCHAIN_TRACING_V2"] = "true"
-
-os.environ["OPENAI_API_KEY"] = ""
-
 class ToneEnum(str, Enum):
     positive = "positive"
     negative = "negative"
@@ -55,7 +49,7 @@ llm = ChatOpenAI(temperature=0, model="gpt-4-1106-preview")
 output_parser = get_openai_output_parser([Email])
 extraction_chain = prompt | llm.bind(**llm_kwargs) | output_parser
 
-files = glob.glob('./formatted/*')
+files = glob.glob('./dataset/*')
 
 for file in files:
     with open(file, 'r') as f:

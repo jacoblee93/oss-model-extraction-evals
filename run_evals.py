@@ -16,13 +16,6 @@ from langchain.chains.openai_functions import (
     convert_to_openai_function
 )
 
-os.environ["LANGCHAIN_API_KEY"] = ""
-os.environ["LANGCHAIN_SESSION"] = ""
-os.environ["LANGCHAIN_TRACING_V2"] = "true"
-
-os.environ["ANTHROPIC_API_KEY"] = ""
-os.environ["OPENAI_API_KEY"] = ""
-
 class ToneEnum(str, Enum):
     positive = "positive"
     negative = "negative"

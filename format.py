@@ -10,7 +10,7 @@ html2text = Html2TextTransformer()
  
 for i, message in enumerate(mbox):
     print(i)
-    with open(f'./formatted/email_{i}.eml', 'wb') as f:
+    with open(f'./dataset/email_{i}.eml', 'wb') as f:
         raw_doc = Document(page_content=message.as_string())
         transformed_docs = html2text.transform_documents([raw_doc])
         f.write(transformed_docs[0].page_content.replace("jacoblee93", "jacob").replace("= ", "").replace("=E2=80=94", "").encode("utf-8"))
