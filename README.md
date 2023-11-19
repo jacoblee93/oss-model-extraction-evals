@@ -1,4 +1,4 @@
-# Evaluating structured extraction with LangSmith
+# Evaluating extraction with OSS models + LangSmith
 
 This repository is an example of the necessary scripts and modules for evaluation with [LangSmith](https://smith.langchain.com/).
 

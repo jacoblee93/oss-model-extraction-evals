@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "spam-email-extraction-eval"
+name = "oss-model-extraction-evals"
 version = "0.1.0"
 description = ""
 authors = ["jacoblee93 <jacoblee93@gmail.com>"]
