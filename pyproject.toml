@@ -8,12 +8,13 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 html2text = "^2020.1.16"
-langchain = { git = "https://github.com/langchain-ai/langchain.git", subdirectory = "libs/langchain", rev = "d485d07d3171173c7540df1dc2499e7569a2af40" }
-langchain-experimental = { git = "https://github.com/langchain-ai/langchain.git", subdirectory = "libs/experimental", rev = "d485d07d3171173c7540df1dc2499e7569a2af40" }
-langsmith = "^0.0.65"
+langchain = "^0.1.9"
+langsmith = "^0.1.10"
 openai = "^1.3.3"
 tiktoken = "^0.5.1"
 anthropic = "^0.7.2"
+langchain-mistralai = "^0.0.5"
+langchain-openai = "^0.0.8"
 
 
 [build-system]

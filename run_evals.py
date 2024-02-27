@@ -8,9 +8,10 @@ from langchain.smith import RunEvalConfig, run_on_dataset
 
 from langchain_experimental.llms.ollama_functions import OllamaFunctions
 from langchain_experimental.llms.anthropic_functions import AnthropicFunctions
+from langchain_mistralai.chat_models import ChatMistralAI
 from langchain.output_parsers.openai_functions import JsonOutputFunctionsParser
 from langchain.pydantic_v1 import BaseModel, Field
-from langchain.chat_models import ChatOpenAI
+from langchain_openai.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.chains.openai_functions import (
     convert_to_openai_function
@@ -49,13 +50,15 @@ llm_kwargs = {
 }
 
 # Ollama JSON mode has a bug where it infintely generates newlines. This stop sequence hack fixes it
-llm = OllamaFunctions(temperature=0, model="llama2", timeout=300, stop=["\n\n\n\n"])
+# llm = OllamaFunctions(temperature=0, model="llama2", timeout=300, stop=["\n\n\n\n"])
 # llm = ChatOpenAI(temperature=0, model="gpt-4-1106-preview")
 # llm = AnthropicFunctions(temperature=0, model="claude-2")
+llm = ChatMistralAI(model="mistral-large")
 
 # output_parser = get_openai_output_parser([Email])
-output_parser = JsonOutputFunctionsParser()
-extraction_chain = prompt | llm.bind(**llm_kwargs) | output_parser | (lambda x: { "output": x })
+# output_parser = JsonOutputFunctionsParser()
+# extraction_chain = prompt | llm.bind(**llm_kwargs) | output_parser | (lambda x: { "output": x })
+extraction_chain = prompt | llm.with_structured_output(Email)
 
 eval_llm = ChatOpenAI(model="gpt-4", temperature=0.0, model_kwargs={"seed": 42})
 
@@ -85,6 +88,6 @@ run_on_dataset(
     llm_or_chain_factory=extraction_chain,
     client=client,
     evaluation=evaluation_config,
-    project_name="llama2-test",
+    project_name="mistral-large-test",
     concurrency_level=1,
 )
